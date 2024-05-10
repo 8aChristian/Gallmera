@@ -1,0 +1,7 @@
+{
+  "name": "Gallmera",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

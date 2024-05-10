@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Ionic Camera App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <!-- Botón para tomar una foto -->
+  <ion-button expand="full" (click)="takePhoto()">Tomar Foto</ion-button>
+  
+  <!-- Botón para seleccionar una foto desde la galería -->
+  <ion-button expand="full" (click)="selectFromGallery()">Seleccionar desde Galería</ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid class="photos-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let foto of fotos">
+        <!-- Utiliza la propiedad webPath para mostrar la foto -->
+        <img [src]="foto.webPath" class="foto-preview" alt="Foto">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
